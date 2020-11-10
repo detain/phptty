@@ -24,7 +24,7 @@ define('CMD', 'htop');
 define('ALLOW_CLIENT_INPUT', true);
 
 // Uinix user for command. Recommend nobody www etc. 
-define('USER', 'www-data');
+define('USER', 'my');
 
 require_once __DIR__ . '/vendor/autoload.php';
 
