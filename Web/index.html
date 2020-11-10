@@ -1,56 +1,55 @@
 <!doctype html>
-<title>phptty</title>
-<script src="term.js"></script>
-<style>
-  html {
-    background: #555;
-  }
 
-  h1 {
-    margin-bottom: 20px;
-    font: 20px/1.5 sans-serif;
-  }
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
+    <title>phptty</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
 
-  .terminal {
-    float: left;
-    border: #000 solid 5px;
-    font-family: Consolas;
-    font-size: 14px;
-    color: #f0f0f0;
-    background: #000;
-  }
+    <link rel="stylesheet" href="node_modules/xterm/dist/xterm.css" />
+    <script src="node_modules/xterm/dist/xterm.js"></script>
+    <script src="node_modules/xterm/dist/addons/fit/fit.js"></script>
 
-  .terminal-cursor {
-    color: #000;
-    background: #f0f0f0;
-  }
+    <style>
+      body {
+        background-color: #000;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background: #000;
+        position: relative;
+        margin:0px;
+      }
+      
+      .container {
+        height: calc(100vh);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: -15px;
+        overflow-y: scroll;
+      }
+      
+      #terminal {
+        overflow: hidden;
+        width: 100%;
+        height: calc(100vh);
+      }
+    </style>
 
-</style>
-<script>
-    if(window.WebSocket){
-        window.addEventListener('load', function() {
-            var socket = new WebSocket("ws://"+document.domain+":7778");
-            socket.onopen = function() {
-                var term = new Terminal({
-                    cols: 130,
-                    rows: 50,
-                    cursorBlink: false
-                });
-                term.open(document.body);
-                term.on('data', function(data) {
-                    socket.send(data);
-                });
-                socket.onmessage = function(data) {
-                    term.write(data.data);
-                };
-                socket.onclose = function() {
-                    term.write("Connection closed.");
-                };
-            };
-        }, false);
-    }
-    else {
-        alert("Browser do not support WebSocket.");
-    }
-</script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="terminal"></div>
+    </div>
+    <script src="term.js"></script>
+  </body>
+</html>
+

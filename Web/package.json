@@ -1,0 +1,29 @@
+{
+  "name": "detain-phptty-web",
+  "version": "1.0.0",
+  "description": "Web frontend side of the software",
+  "main": "term.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/detain/phptty.git"
+  },
+  "keywords": [
+    "tty",
+    "ssh",
+    "ssh2",
+    "tunnel",
+    "management"
+  ],
+  "author": "detain@interserver.net",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/detain/phptty/issues"
+  },
+  "homepage": "https://github.com/detain/phptty#readme",
+  "dependencies": {
+    "xterm": ">=4.9.0"
+  }
+}
