@@ -3,6 +3,28 @@ A terminal in your browser using websocket php and  [workerman](https://github.c
 
 ## URLs for future improvements
 
+### XML-RPC Libs
+* [plesk/api-php-lib: PHP library for Plesk XML-RPC interface](https://github.com/plesk/api-php-lib)
+* [irazasyed/xml-rpc-ping: PHP XML-RPC Service Pinger](https://github.com/irazasyed/xml-rpc-ping)
+* [letrunghieu/wordpress-xmlrpc-client: A PHP XML-RPC client for Wordpress websites](https://github.com/letrunghieu/wordpress-xmlrpc-client)
+* [picklingjar/Wordpress-XML-RPC-Library: A PHP library for interacting with Wordpress via XML-RPC](https://github.com/picklingjar/Wordpress-XML-RPC-Library)
+* [DarkaOnLine/Ripcord: XML RPC client and server around PHP's xmlrpc library](https://github.com/DarkaOnLine/Ripcord)
+* [esler/json-rpc: Simple async JSON-RPC library build on top of the GuzzleHttp](https://github.com/esler/json-rpc)
+* [wilderamorim/updateservices: Update services is a tool that you can use to let other people know that you've updated your blog. Similar to what WordPress does when sending an XML-RPC ping, automatically notifying popular update services when you update your blog.](https://github.com/wilderamorim/updateservices)
+* [protophp/protophp: ProtoPHP is an asynchronous binary protocol for inter-service communication in PHP applications.](https://github.com/protophp/protophp)
+* [FIGUS97/XMLRPC-Sockets-UDP-TCP-Communication: Little apps to train communicate via XML/RPC, SOAP, Sockets - for studies](https://github.com/FIGUS97/XMLRPC-Sockets-UDP-TCP-Communication)
+* [75k/Markdown-To-HTML-Of-XML-RPC: 一个WordPress插件](https://github.com/75k/Markdown-To-HTML-Of-XML-RPC)
+* [fpoirotte/XRL: A very simple XML-RPC library (client + server) written in PHP](https://github.com/fpoirotte/XRL)
+* [Ang3/php-xmlrpc-client: PHP XML-RPC client](https://github.com/Ang3/php-xmlrpc-client)
+* [lstrojny/fxmlrpc: A modern, super fast XML/RPC client for PHP >=5.6](https://github.com/lstrojny/fxmlrpc)
+* [MegaChriz/remotedb: Client-side module to exchange information with a remote database via XML-RPC.](https://github.com/MegaChriz/remotedb)
+* [kv4X/News-scraper: This script scrape news from websites and publish it on your wordpress website using xml-rpc.](https://github.com/kv4X/News-scraper)
+* [jeremyfelt/log-xmlrpc-requests: Log incoming XML-RPC requests to a WordPress site](https://github.com/jeremyfelt/log-xmlrpc-requests)
+* [comodojo/rpcclient: XML and JSON(2.0) RPC client](https://github.com/comodojo/rpcclient)
+* [comodojo/rpcserver: Framework-independent XML and JSON(2.0) RPC server](https://github.com/comodojo/rpcserver)
+* [jasurbek-khanjarov/xml-rpc-request-guzzle: Sending xml-rpc request with using Guzzle](https://github.com/jasurbek-khanjarov/xml-rpc-request-guzzle)
+
+
 ### Backend Server Libs
 * [walkor/crontab: A crontab written in PHP based on workerman](https://github.com/walkor/crontab)
 * [walkor/mysql: Long-living MySQL connection for daemon.](https://github.com/walkor/mysql)
