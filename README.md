@@ -1,6 +1,94 @@
 # phptty
 A terminal in your browser using websocket php and  [workerman](https://github.com/walkor/Workerman), similar to [gotty](https://github.com/yudai/gotty).
 
+## Server Notes
+
+* Each connection has a 'ima' status tied to it which can be
+  * guest - unauthenticated connections likely from client browsers
+  * client - authenticated client connection
+  * admin - authenticated admin connection
+  * system - authenticated cnnection from remote systemn or integration
+
+## Message Protocol Notes
+
+### Websocket Message Rules
+
+* All messages (sent and received) MUST BE formatted in JSON
+* All messages have a 'type' field specifying the specific message action (such as login or say)
+* Client MUST respond to 'ping' type messages with a 'pong' type message
+
+
+### Websocket _type_ Actions
+
+* login - authenticates with the system
+  * parameters for username + passsword auth
+	* ima
+	* username
+	* password
+  * parameters for existing session auth
+	* ima
+	* session_id
+  * parameters for integration / system auth
+	* ima
+	* api_key
+	* api_secret 
+* logouut - deauthenticate and close a connection
+  * optional parameter
+	* disconnect - boolean indicating whether ot disconnect after logout or stay in and unauthenticated (defaults to true)
+* say - sends a message
+  * parameters
+	* from
+	* is
+	* to
+	* content
+* ping - a request to see if the server or client is still alive
+* pong - a response letting the ping initializor we are up and responding
+* status - retreives information about the running status of the system including client connections, tasks, timers, counters, etc.
+  * optional parameter
+	* what - what to show, any combination of (defaults to all)
+	  * all
+	  * clients
+	  * timers
+	  * log
+	  * processes
+* run - starts running a program
+  * parameters
+	* command
+  * optional parameters
+	* host - host to run it on instead of the local system (defaults to false for local run)
+	* interactive - boolean, whether to enable stdin or not (defaults to true)
+	* pty - boolean whether to enable pty use instead of pipes (deafults to true)
+	* height - terminal height (defaults to 24)
+	* width - terminal width (defaults to 80)
+* running - used to send new output and input to the process
+  * optional parameters
+	* stdin - input to send to the process
+	* stdout - output from the process
+	* stderr - error output from the process
+* ran - used to indicate a running process has finished
+  * parameters
+	* id - the process id
+  * optional parameters
+	* code - the exit code
+	* term - the terminal signal if it recieved one 
+	  
+## Protocols To Support
+
+### Immdiate Support
+
+* Websocket
+* Socket.IO
+
+### Future Support
+
+* WebRTC
+* JSON-RPC
+* Thrift-RPC
+* HTTP Polling via REST
+* Server-Sent Events (SSE)
+* HTTP/2 Server Push 
+* XMPP
+
 ## URLs for future improvements
 
 ### XML-RPC Libs
